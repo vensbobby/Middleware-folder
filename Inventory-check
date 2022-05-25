@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "We are drawing a full system inventory"
+echo "The kernel version is :"
+sleep 2
+uname -r
+echo
+sleep 2
+echo "your memory is :"
+echo
+sleep 2
+echo
+free -m
+echo
+echo "your hard drive info below:"
+echo
+sleep 2
+lsblk
+echo
+sleep 2
+cat /etc/os-release
+sleep 2
+getconf LONG_BIT
+sleep 3
+lscpu
