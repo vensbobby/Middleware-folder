@@ -1,1 +1,24 @@
-<h1>This is my website</h1>
+#!/bin/bash
+
+#Check if a user exist
+
+echo -n "Please enter a username: "
+read U
+
+id ${U}
+
+if
+        [ $? -eq 0 ]
+then
+echo "username $U exists on this system."
+else
+echo -n "username $U doesn't exist. Please enter the username you would like to create: "
+read new_user
+adduser $new_user
+grep $new_user /etc/passwd
+        if
+                [ $? -eq 0 ]
+                then
+                echo "$new_user has been created successfully"
+        fi
+fi
